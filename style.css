@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 15pt;
+  background-color: #65194F;
+  height: 200dvh;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.wrapper {
+  overflow: hidden;
+}
+
+.contenedor {
+  overflow: hidden;
+  position: relative;
+}
+
+.contenedor :is(.planeta, .montanas, .estrellas, .fondo) {
+  position: absolute;
+  top: 0;
+  animation-timeline: scroll(root);
+  animation-fill-mode: both;
+  animation-timing-function: linear;
+  animation-range: 0 50dvh;
+  animation-range-end: contain 80%;
+}
+
+.montanas {
+  z-index: -1;
+  animation: montanas;
+}
+
+.planeta {
+  z-index: -2;
+  animation: planeta;
+}
+
+.estrellas {
+  z-index: -3;
+  animation: estrellas;
+}
+.fondo {
+  z-index: -4;
+  animation: fondo;
+}
+
+@keyframes montanas {
+  to {
+    top: 4%;
+  }
+}
+
+@keyframes planeta {
+  to {
+    top: 20%;
+  }
+}
+
+@keyframes estrellas {
+  to {
+    top: 30%;
+  }
+}
+
+@keyframes fondo {
+  to {
+    top: 35%;
+  }
+}
